@@ -13,3 +13,11 @@ provider "aws" {
 
 }
 
+resource "aws_instance" "example" {
+    ami = "ami-072f48a9ed4f1bbda"
+    instance_type = "t2.micro"
+}
+
+output "public_ip" {
+    value = aws_instance.example
+}
